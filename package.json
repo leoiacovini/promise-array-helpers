@@ -1,0 +1,23 @@
+{
+  "name": "promise-array-helpers",
+  "version": "0.1.0",
+  "description": "Some helpers to handle promise arrays",
+  "main": "index.js",
+  "repository": "https://github.com/leoiacovini/promise-array-helpers",
+  "author": "Leonardo Iacovini <leoiacovini@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^22.1.4"
+  },
+  "keywords": [
+    "promise",
+    "array",
+    "map",
+    "filter",
+    "reduce",
+    "async"
+  ]
+}
