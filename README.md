@@ -2,6 +2,16 @@
 
 A collection of functions to make it easier to work with Arrays and Promises together.
 
+## Installing
+
+```shell
+npm install --save promise-array-helpers
+```
+or
+```shell
+yarn add promise-array-helpers
+```
+
 ## Included Functions
 
 The available function are: `pmap`, `preduce`, `pfilter`, `pforEach`, `papply`, `pevery` and `psome`.
@@ -24,3 +34,7 @@ pfilter(list, (item) => (item % 2) === 1) // Returns Promise<[3]>
 const list = [1, 2, Promise.resolve(3), Promise.resolve(4)]
 preduce(list, 0, (acc, item) => acc + item) // Returns Promise<10>
 ```
+
+## License
+
+MIT
