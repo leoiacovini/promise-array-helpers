@@ -13,6 +13,16 @@ describe('on pmap', () => {
         const mappedArray = pmap(promises, v => v + 1);
         return expect(mappedArray).resolves.toEqual([2,3,4])
     })
+
+    test('returning a promise in each iteration', () => {
+        const mappedArray = pmap(values, v => Promise.resolve(v + 1))
+        return expect(mappedArray).resolves.toEqual([2,3,4])
+    })
+
+    test('mixed values', () => {
+        const mappedArray = pmap(values.concat(promises), v => v + 1)
+        return expect(mappedArray).resolves.toEqual([2,3,4,2,3,4])
+    })
 })
 
 describe('on pfilter', () => {
@@ -25,6 +35,11 @@ describe('on pfilter', () => {
         const filteredArray = pfilter(promises, v => v === 1)
         return expect(filteredArray).resolves.toEqual([1])
     });
+
+    test('mixed values', () => {
+        const filteredArray = pfilter(values.concat(promises),  v => v === 1)
+        return expect(filteredArray).resolves.toEqual([1,1])
+    })
 })
 
 describe('on preduce', () => {

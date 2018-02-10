@@ -12,7 +12,7 @@ const papply = (plist, fn) => {
  * @param {Array} plist Array of values or Promises to be iterated
  * @param {Function} fn Function to be applied by the map function
  */
-const pmap = (plist, fn) => papply(plist, pl => pl.map(fn))
+const pmap = (plist, fn) => papply(plist, pl => pl.map(fn)).then(arr => Promise.all(arr))
 
 /**
  * 
